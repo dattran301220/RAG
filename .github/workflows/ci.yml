@@ -88,5 +88,5 @@ jobs:
       - name: Validate Nginx Config
         run: |
           if [ -f docker/nginx/nginx.conf ]; then
-            docker run --rm -v ${{ github.workspace }}/docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro nginx:alpine nginx -t
+            docker run --rm --add-host backend:127.0.0.1 -v ${{ github.workspace }}/docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro nginx:alpine nginx -t
           fi
