@@ -53,15 +53,12 @@ jobs:
 
       - name: Run Unit Tests with Pytest
         env:
+          PYTHONPATH: backend
           ENVIRONMENT: testing
           REDIS_URL: redis://localhost:6379/0
           POSTGRES_DB: test_db
         run: |
-          if [ -d backend/tests ]; then
-            pytest backend/tests -v --maxfail=1
-          else
-            echo "Chưa có thư mục tests, bỏ qua bước chạy test tự động."
-          fi
+          pytest backend/tests -v
 
   # -------------------------------------------------------------
   # Job 2: Kiểm tra tính toàn vẹn khi Build Docker Image
