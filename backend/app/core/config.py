@@ -46,8 +46,8 @@ class Settings(BaseSettings):
 
     # 6. Mô hình AI Offline Ollama
     OLLAMA_BASE_URL: str = "http://host.docker.internal:11434"
-    OLLAMA_LLM_MODEL: str = "qwen2.5:latest"
-    OLLAMA_EMBED_MODEL: str = "bge-m3:latest"
+    OLLAMA_LLM_MODEL: str = "llama3.1:latest"
+    OLLAMA_EMBED_MODEL: str = "nomic-embed-text:latest"
 
     # Cấu hình bảo Pydantic tự động nạp từ file .env
     class Config:
